@@ -2,7 +2,6 @@ package Concurrent_001.T24;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 使用队列
@@ -23,6 +22,7 @@ public class TicketSeller4 {
 		for (int i = 0; i < 10; i++) {
 			new Thread(() -> {
 				while (true) {
+					// 取票
 					String s = tickets.poll();
 					if (s == null) {
 						break;
